@@ -9,7 +9,7 @@ import UIKit
 
 struct Constants {
     
-    static let colorOfButton = UIColor(red: 87/255,
+    static let colorOfFilledButton = UIColor(red: 87/255,
                                        green: 40/255,
                                        blue: 243/255,
                                        alpha: 1)
