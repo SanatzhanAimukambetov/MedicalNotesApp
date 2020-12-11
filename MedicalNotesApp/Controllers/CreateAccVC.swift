@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class CreateAccViewController: UIViewController {
 
@@ -13,8 +14,18 @@ class CreateAccViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .white
+        view.addSubview(createAccView)
+        createAccView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillLayoutSubviews() {
+        Utilities.setupCornerRadius(createAccView.topContainerView)
     }
     
     func validateFields() -> String? {

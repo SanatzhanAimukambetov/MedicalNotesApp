@@ -11,20 +11,20 @@ import SnapKit
 class SignInView: UIView {
     let loginTextField: UITextField = {
        let loginTF = UITextField()
-        loginTF.backgroundColor = Constants.colorOfTextField
+        loginTF.backgroundColor = Constants.colorLightGrey
         return loginTF
     }()
     
     let passwordTextField: UITextField = {
         let passwordTF = UITextField()
-        passwordTF.backgroundColor = Constants.colorOfTextField
+        passwordTF.backgroundColor = Constants.colorLightGrey
         return passwordTF
     }()
     
     let signInButton: UIButton = {
        let signInButton = UIButton()
         signInButton.setTitle("Sign In", for: .normal)
-        signInButton.backgroundColor = Constants.colorOfButton
+        signInButton.backgroundColor = .white
         return signInButton
     }()
 
