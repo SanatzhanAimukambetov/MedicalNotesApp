@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ConstantValues {
+struct Constants {
     
     static let colorOfButton = UIColor(red: 87/255,
                                        green: 40/255,

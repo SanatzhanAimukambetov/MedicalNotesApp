@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+class OnboardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

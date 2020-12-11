@@ -8,23 +8,23 @@
 import UIKit
 import SnapKit
 
-class OnboardingView: UIView {
+class SignInView: UIView {
     let loginTextField: UITextField = {
        let loginTF = UITextField()
-        loginTF.backgroundColor = ConstantValues.colorOfTextField
+        loginTF.backgroundColor = Constants.colorOfTextField
         return loginTF
     }()
     
     let passwordTextField: UITextField = {
         let passwordTF = UITextField()
-        passwordTF.backgroundColor = ConstantValues.colorOfTextField
+        passwordTF.backgroundColor = Constants.colorOfTextField
         return passwordTF
     }()
     
     let signInButton: UIButton = {
        let signInButton = UIButton()
         signInButton.setTitle("Sign In", for: .normal)
-        signInButton.backgroundColor = ConstantValues.colorOfButton
+        signInButton.backgroundColor = Constants.colorOfButton
         return signInButton
     }()
 
