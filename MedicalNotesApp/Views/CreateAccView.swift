@@ -14,10 +14,10 @@ class CreateAccView: UIView {
     let topContainerView = UIView()
     let topBackButton = UIButton()
     let topLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Create Account"
-        label.textColor = .white
-        return label
+        let topLabel = UILabel()
+        topLabel.text = "Create Account"
+        topLabel.textColor = .white
+        return topLabel
     }()
     
     let mainImage = UIImageView()
@@ -25,20 +25,39 @@ class CreateAccView: UIView {
     
     let fullNameContainerView = UIView()
     let fullNameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Full Name"
-        label.textColor = Constants.colorDarkBlue
-        return label
+        let fullNamelabel = UILabel()
+        fullNamelabel.text = "Full Name"
+        return fullNamelabel
     }()
-    let fullNameTextField = UITextField()
+    let fullNameTextField: UITextField = {
+        let fullNametf = UITextField()
+        fullNametf.placeholder = "Your given name"
+        return fullNametf
+    }()
     
     let emailContainerView = UIView()
-    let emailLabel = UILabel()
-    let emailTextField = UITextField()
+    let emailLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Email"
+        return label
+    }()
+    let emailTextField: UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "E.g: yourname@email.com"
+        return tf
+    }()
     
     let passwordContainerView = UIView()
-    let passwordLabel = UILabel()
-    let passwordTextField = UITextField()
+    let passwordLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Password"
+        return label
+    }()
+    let passwordTextField: UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "6-12 characters"
+        return tf
+    }()
     
     let errorLabel = UILabel()
     
@@ -87,6 +106,9 @@ class CreateAccView: UIView {
         Utilities.styleRegularContainer(fullNameContainerView)
         Utilities.styleRegularContainer(emailContainerView)
         Utilities.styleRegularContainer(passwordContainerView)
+        Utilities.setupLabelInGreyContainer(fullNameLabel)
+        Utilities.setupLabelInGreyContainer(emailLabel)
+        Utilities.setupLabelInGreyContainer(passwordLabel)
         Utilities.styleTextField(fullNameTextField)
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
@@ -102,62 +124,83 @@ class CreateAccView: UIView {
         }
         
         mainImage.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().inset(Constants.gapFromEdge)
+            make.leading.equalToSuperview().inset(Constants.gapFromSide)
             make.top.equalTo(topContainerView.snp.bottom).offset(40)
             make.height.width.equalTo(60)
         }
         
         mainLabel.snp.makeConstraints { (make) in
             make.top.equalTo(mainImage.snp.bottom).offset(20)
-            make.leading.equalToSuperview().inset(Constants.gapFromEdge)
+            make.leading.equalToSuperview().inset(Constants.gapFromSide)
         }
         
         fullNameContainerView.snp.makeConstraints { (make) in
             make.top.equalTo(mainLabel.snp.bottom).offset(50)
-            make.leading.trailing.equalToSuperview().inset(Constants.gapFromEdge)
+            make.leading.trailing.equalToSuperview().inset(Constants.gapFromSide)
             make.height.equalTo(Constants.heightOfContainer)
         }
         
         emailContainerView.snp.makeConstraints { (make) in
             make.top.equalTo(fullNameContainerView.snp.bottom).offset(50)
-            make.leading.trailing.equalToSuperview().inset(Constants.gapFromEdge)
+            make.leading.trailing.equalToSuperview().inset(Constants.gapFromSide)
             make.height.equalTo(Constants.heightOfContainer)
         }
         
         passwordContainerView.snp.makeConstraints { (make) in
             make.top.equalTo(emailContainerView.snp.bottom).offset(50)
-            make.leading.trailing.equalToSuperview().inset(Constants.gapFromEdge)
+            make.leading.trailing.equalToSuperview().inset(Constants.gapFromSide)
             make.height.equalTo(Constants.heightOfContainer)
         }
         
         signUpButton.snp.makeConstraints { (make) in
             make.top.equalTo(passwordContainerView.snp.bottom).offset(80)
-            make.leading.trailing.equalToSuperview().inset(Constants.gapFromEdge)
+            make.leading.trailing.equalToSuperview().inset(Constants.gapFromSide)
             make.height.equalTo(Constants.heightOfButton)
         }
         
         //Subviews of subviews
         topBackButton.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().inset(Constants.gapFromEdge)
-            make.bottom.equalToSuperview().inset(Constants.gapFromEdge)
+            make.leading.equalToSuperview().inset(Constants.gapFromSide)
+            make.bottom.equalToSuperview().inset(Constants.gapFromSide)
             make.height.width.equalTo(20)
         }
         
         topLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(Constants.gapFromEdge)
+            make.bottom.equalToSuperview().inset(Constants.gapFromSide)
         }
         
         
         
         
         fullNameLabel.snp.makeConstraints { (make) in
-            make.leading.trailing.top.equalToSuperview().inset(Constants.gapFromEdge)
+            make.leading.equalToSuperview().inset(Constants.gapFromSide)
+            make.top.equalToSuperview().inset(Constants.gapFromTop)
         }
         
         fullNameTextField.snp.makeConstraints { (make) in
-            make.top.equalTo(fullNameLabel.snp.bottom).offset(15)
-            make.leading.trailing.bottom.equalToSuperview().inset(Constants.gapFromEdge)
+            make.top.equalTo(fullNameLabel.snp.bottom).offset(Constants.gapBetweenLabAndTF)
+            make.leading.trailing.equalToSuperview().inset(Constants.gapFromSide)
+        }
+        
+        emailLabel.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().inset(Constants.gapFromSide)
+            make.top.equalToSuperview().inset(Constants.gapFromTop)
+        }
+        
+        emailTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(fullNameLabel.snp.bottom).offset(Constants.gapBetweenLabAndTF)
+            make.leading.trailing.equalToSuperview().inset(Constants.gapFromSide)
+        }
+        
+        passwordLabel.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().inset(Constants.gapFromSide)
+            make.top.equalToSuperview().inset(Constants.gapFromTop)
+        }
+        
+        passwordTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(fullNameLabel.snp.bottom).offset(Constants.gapBetweenLabAndTF)
+            make.leading.trailing.equalToSuperview().inset(Constants.gapFromSide)
         }
         
     }

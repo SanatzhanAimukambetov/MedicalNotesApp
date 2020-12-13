@@ -14,6 +14,7 @@ class Utilities {
         
         textfield.backgroundColor = Constants.colorLightGrey
         textfield.borderStyle = .none
+        textfield.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20)
     }
     
     static func styleFilledButton(_ button: UIButton) {
@@ -46,6 +47,12 @@ class Utilities {
     static func setupCornerRadius(_ container: UIView) {
         
         container.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 30)
+    }
+    
+    static func setupLabelInGreyContainer(_ label: UILabel) {
+        
+        label.textColor = Constants.colorDarkBlue
+        label.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 15)
     }
     
     static func isPasswordValid(_ password: String) -> Bool {

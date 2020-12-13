@@ -25,8 +25,8 @@ struct Constants {
                                           alpha: 1)
     
     static let heightOfButton = 70
-    
-    static let heightOfContainer = 70
-    
-    static let gapFromEdge = 20
+    static let heightOfContainer = 80
+    static let gapFromSide = 20
+    static let gapFromTop = 12
+    static let gapBetweenLabAndTF = 8
 }

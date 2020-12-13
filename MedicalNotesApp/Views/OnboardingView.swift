@@ -57,13 +57,13 @@ class OnboardingView: UIView {
         
         createAccButton.snp.makeConstraints { (make) in
             make.top.equalTo(mainImage.snp.bottom).offset(30)
-            make.leading.trailing.equalToSuperview().inset(Constants.gapFromEdge)
+            make.leading.trailing.equalToSuperview().inset(Constants.gapFromSide)
             make.height.equalTo(Constants.heightOfButton)
         }
         
         signInButton.snp.makeConstraints { (make) in
             make.top.equalTo(createAccButton.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(Constants.gapFromEdge)
+            make.leading.trailing.equalToSuperview().inset(Constants.gapFromSide)
             make.height.equalTo(Constants.heightOfButton)
             make.bottom.equalToSuperview().inset(45)
         }
